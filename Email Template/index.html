@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="x-icon/image" href="https://i.ibb.co/Y2mXm0r/favicon.png" alt="favicon">
+
+    <!-- CSS Section -->
+    <style>
+        /*
+    Author: Rakibul Hassan Rifat
+    
+*/
+        /*
+	==========Index=========
+	01) Import Section
+    02) Variable Section
+    03) Mixin & Include
+	04) Global CSS
+    05) Container Section
+	06) Header Section
+	07) Hero Section
+	08) Bill Section
+    09) Shipping Section
+    10) Offer Section
+    11)  Social Section
+    13) Footer Section
+    14) Media Query Section
+	========================
+*/
+        /*===== 01) Import Section =====*/
+        /*===== Resize Section =====*/
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            border-spacing: 0;
+        }
+
+        img {
+            border: 0;
+        }
+
+        /*===== 02) Variable Section =====*/
+        /*===== 03) Mixin & Include Section =====*/
+        /*===== 04) Global CSS Section =====*/
+        body {
+            background-color: #CCC;
+
+        }
+
+        /*===== 05) Container Section  =====*/
+        body .container {
+            width: 720px;
+            max-width: 100%;
+            margin: 0 auto;
+            background-color: #FFF;
+        }
+
+        /*===== 06) Header Section  =====*/
+        body .container .header {
+            background-color: #3598DB;
+            padding: 20px;
+        }
+
+        body .container .header .row {
+            content: '';
+            clear: both;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
+        body .container .header .row .col-6 {
+            width: 50%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+        }
+
+        body .container .header .row .left {
+            float: left;
+        }
+
+        body .container .header .row .left img {
+            width: 50%;
+        }
+
+        body .container .header .row .right {
+            float: right;
+        }
+
+        body .container .header .row .right a {
+            text-decoration: none;
+            float: right;
+            margin: 0 auto;
+            font-size: 20px;
+            -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
+            color: #FFF;
+        }
+
+        /*===== 07) Hero Section  =====*/
+        body .container .hero {
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        body .container .hero img {
+            width: 17%;
+        }
+
+        body .container .hero h1 {
+            font-size: 32px;
+            line-height: 110%;
+            padding: 10px;
+            text-align: center;
+            color: #47484B;
+        }
+
+        body .container .hero p {
+            text-align: center;
+            font-size: 16px;
+            line-height: 130%;
+            color: #7A7676;
+            padding: 2px 40px 25px;
+        }
+
+        /*===== 08) Bill Section =====*/
+        body .container .bill table {
+            width: 90%;
+            margin: 0 auto;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+
+        body .container .bill table thead {
+            border-top: 1px solid #615E5E;
+            border-bottom: 1px solid #615E5E;
+            font-weight: bold;
+        }
+
+        body .container .bill table td {
+            padding: 10px;
+            color: #615E5E;
+        }
+
+        body .container .bill table thead tr td:last-child,
+        body .container .bill table tbody tr td:last-child {
+            float: right;
+        }
+
+        /*===== 09) Shipping  =====*/
+        body .container .shipping .row {
+            display: table;
+            clear: both;
+        }
+
+        body .container .shipping .row .col-6 {
+            width: 50%;
+            float: left;
+            padding: 30px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body .container .shipping .row .col-6 .content {
+            padding: 10px;
+        }
+
+        body .container .shipping .row .col-6 .content h5 {
+            margin: 5px 0;
+            font-size: 15px;
+        }
+
+        /*===== 10) Offer Section  =====*/
+        body .container .offer {
+            background-color: #3598DB;
+            padding: 30px 20px;
+        }
+
+        body .container .offer h2 {
+            font-size: 24px;
+            margin: 0;
+            padding: 26px 10px;
+            text-align: center;
+            color: #FFF;
+        }
+
+        body .container .offer button {
+            border: none;
+            cursor: pointer;
+            padding: 15px 40px;
+            background-color: #FFF;
+            display: block;
+            margin: 0 auto;
+            border-radius: 50px;
+        }
+
+        body .container .offer button a {
+            color: #3598DB;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 120%;
+        }
+
+        /*===== 11) Social Section  =====*/
+        body .container .social .col-12 {
+            text-align: center;
+        }
+
+        body .container .social .col-12 h2 {
+            padding: 35px 10px 10px;
+            font-size: 30px;
+            color: #236FA1;
+        }
+
+        body .container .social .col-12 p {
+            text-align: center;
+            font-size: 16px;
+            line-height: 130%;
+            color: #7A7676;
+            font-weight: lighter;
+            font-style: italic;
+            padding: 2px 40px 15px;
+        }
+
+        body .container .social .col-12 .social-bar {
+            padding: 9px 9px 31px;
+        }
+
+        body .container .social .col-12 .social-bar a {
+            text-decoration: none;
+        }
+
+        body .container .social .col-12 .social-bar a img {
+            width: 5%;
+            margin: 0 10px;
+        }
+
+        /*===== 12) Footer Section  =====*/
+        body .container .footer {
+            padding: 16px;
+            background-color: #236FA1;
+        }
+
+        body .container .footer p {
+            text-align: center;
+            color: #FFF;
+        }
+
+        /*===== 13) Media Query Section =====*/
+        @media (max-width: 450px) {
+            .header .row .left img {
+                width: 90%;
+            }
+
+            .shipping .row .col-6 {
+                width: 100% !important;
+                float: none;
+                padding: 20px 30px !important;
+            }
+
+            .social .col-12 .social-bar a img {
+                width: 10% !important;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .header .row .left img {
+                width: 100% !important;
+            }
+        }
+
+        /*# sourceMappingURL=style.css.map */
+    </style>
+
+    <title>Receipt || Mrh Rifat</title>
+</head>
+
+<body>
+
+    <!-- Container Section Start -->
+    <div class="container">
+
+        <!-- Header Section Start -->
+        <header class="header">
+            <div class="row">
+                <div class="col-6 left">
+                    <img src="https://i.ibb.co/8xKMZRS/logo.png" alt="logo">
+                </div>
+                <div class="col-6 right">
+                    <a href="#">Shop</a>
+                </div>
+            </div>
+        </header>
+        <!-- Header Section End -->
+
+        <!-- Hero Section Start -->
+        <section class="hero">
+            <img src="https://i.ibb.co/k2r8vGY/ok.png" alt="ok">
+            <h1>Thanks for your payment!</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                laoreet dolore magna  
+            </p>
+        </section>
+        <!-- Hero Section End -->
+
+        <!-- Bill Section Start -->
+        <section class="bill">
+            <table>
+                <thead>
+                    <tr>
+                        <td>ORDER CONFIRMATION</td>
+                        <td>#32229844</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Item One</td>
+                        <td>$200</td>
+                    </tr>
+                    <tr>
+                        <td>Item Two</td>
+                        <td>$300</td>
+                    </tr>
+                    <tr>
+                        <td>Item Three</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr>
+                        <td>Item Four</td>
+                        <td>$400</td>
+                    </tr>
+                </tbody>
+
+                <thead>
+                    <tr>
+                        <td>Total</td>
+                        <td>$1000</td>
+                    </tr>
+                </thead>
+
+            </table>
+        </section>
+        <!-- Bill Section End -->
+
+        <!-- Shipping Section Start -->
+        <section class="shipping">
+            <div class="row">
+                <div class="col-6">
+                    <div class="content">
+                        <h5>Delivery Addresss:</h5>
+                        <address>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh  
+                        </address>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="content">
+                        <h5>Shipping Addresss:</h5>
+                        <address>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Shipping Section End -->
+
+        <!-- Offer Section Start -->
+        <section class="offer">
+            <h2>Get 20% OFF on your next order</h2>
+            <button>
+                <a href="#">
+                    20SPECIAL
+                </a>
+            </button>
+        </section>
+        <!-- Offer Section End -->
+
+        <!-- Social Section Start -->
+        <section class="social">
+            <div class="col-12">
+                <h2>
+                    The Shop
+                </h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                    laoreet dolore magna  
+                </p>
+                <div class="social-bar">
+                    <a href="#">
+                        <img src="https://i.ibb.co/PQMfj54/facebook.png" alt="facebook">
+                    </a>
+                    <a href="#">
+                        <img src="https://i.ibb.co/khhmXQH/linkedin.png" alt="linkedin">
+                    </a>
+                    <a href="#">
+                        <img src="https://i.ibb.co/rwmsJfY/twitter.png" alt="twitter">
+                    </a>
+                    <a href="#">
+                        <img src="https://i.ibb.co/H21YjwW/github.png" alt="github">
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Social Section End -->
+
+        <!-- Footer Section Start -->
+        <footer class="footer">
+            <p>
+                Mrh Rifat © 2021. All Rights Reserved
+            </p>
+        </footer>
+        <!-- Footer Section End -->
+
+    </div>
+    <!-- Container Section End -->
+
+    <!--Img Section
+        <img src="https://i.ibb.co/PQMfj54/facebook.png" alt="facebook">
+        <img src="https://i.ibb.co/H21YjwW/github.png" alt="github">
+        <img src="https://i.ibb.co/khhmXQH/linkedin.png" alt="linkedin">
+        <img src="https://i.ibb.co/8xKMZRS/logo.png" alt="logo">
+        <img src="https://i.ibb.co/k2r8vGY/ok.png" alt="ok">
+        <img src="https://i.ibb.co/rwmsJfY/twitter.png" alt="twitter">
+        <img src="https://i.ibb.co/Y2mXm0r/favicon.png" alt="favicon">     
+    -->
+
+</body>
+
+</html>

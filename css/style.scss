@@ -1,0 +1,288 @@
+/*
+    Author: Rakibul Hassan Rifat
+    
+*/
+
+/*
+	==========Index=========
+	01) Import Section
+    02) Variable Section
+    03) Mixin & Include
+	04) Global CSS
+    05) Container Section
+	06) Header Section
+	07) Hero Section
+	08) Bill Section
+    09) Shipping Section
+    10) Offer Section
+    11)  Social Section
+    13) Footer Section
+    14) Media Query Section
+	========================
+*/
+/*===== 01) Import Section =====*/
+@import "resize";
+
+/*===== 02) Variable Section =====*/
+$bg:#CCC;
+$primary-color:#3598DB;
+$head-text:#47484B;
+$primary-prgp:#7A7676;
+$table-head:#615E5E;
+$address-text:#5C5757;
+$white:#FFF;
+$footer-head:#236FA1;
+$footer-prgp:#ECF7FF;
+
+/*===== 03) Mixin & Include Section =====*/
+@mixin head{
+    font-size: 32px;
+    line-height: 110%;
+    padding: 10px;
+    text-align: center;
+    color:$head-text;
+}
+@mixin prgp{
+    text-align: center;
+    font-size: 16px;
+    line-height: 130%;
+    color:$primary-prgp;
+}
+@mixin tbl-prgp{
+    font-size: 14px;
+    line-height: 140%;
+    padding:10%;
+    color:$table-head;
+}
+
+/*===== 04) Global CSS Section =====*/
+
+body{
+    background-color: $bg;
+    /*===== 05) Container Section  =====*/
+    .container{
+        width: 720px;
+        max-width: 100%;
+        margin: 0 auto;
+        background-color: $white;
+
+        /*===== 06) Header Section  =====*/
+        .header{
+            background-color: $primary-color;
+            padding: 20px;
+            .row{
+            content: '';
+            clear: both;
+            display:flex;
+
+                .col-6{
+                    width: 50%;
+                    display: flex;
+                    flex-direction: row;
+                    
+                }
+                .left{
+                    float: left;
+                    img{
+                        width: 50%;
+                    }
+                }
+
+                .right{
+                    float:right;
+                    a {
+                        text-decoration: none;
+                        float: right;
+                        margin: 0 auto;
+                        font-size: 20px;
+                        align-self: center;
+                        color:$white;
+                    }
+                }
+            }
+        }
+
+        /*===== 07) Hero Section  =====*/
+        .hero{
+            text-align: center;
+            padding-top: 30px;
+
+            img{
+                width:17%;
+            }
+            h1{
+                @include head;
+            }
+            p{
+                @include prgp;
+                padding: 2px 40px 25px;
+            }
+        }
+
+        /*===== 08) Bill Section =====*/
+        .bill{
+            table{
+                width: 90%;
+                margin: 0 auto;
+                table-layout: fixed;
+                border-collapse: collapse;
+
+                thead{
+                    border-top: 1px solid $table-head;
+                    border-bottom: 1px solid $table-head;
+                    font-weight: bold;
+                }
+                td{
+                    padding: 10px;
+                    color: $table-head;
+                }
+
+                thead tr td:last-child,
+                tbody tr td:last-child{
+                    float: right;
+                }
+            }
+        }
+
+        /*===== 09) Shipping  =====*/
+        .shipping{
+            
+            .row{
+                display: table;
+                clear: both;
+
+                .col-6{
+                    width: 50%;
+                    float: left;
+                    padding:30px;
+                    box-sizing: border-box;
+
+                    .content{
+                        
+                        padding: 10px;
+
+                        h5{
+                            margin: 5px 0;
+                            font-size: 15px;
+                        }                        
+                    }
+                }
+            }
+        }
+
+        /*===== 10) Offer Section  =====*/
+        .offer{
+            background-color: $primary-color;
+            padding: 30px 20px;
+            h2{
+                font-size: 24px;
+                margin: 0;
+                padding: 26px 10px;
+                text-align: center;
+                color:$white;
+            }
+            button{
+                border: none;
+                cursor: pointer;
+                padding: 15px 40px;
+                background-color: $white;
+                display: block;
+                margin: 0 auto;
+                border-radius: 50px;
+
+                a{
+                    color: $primary-color;
+                    text-decoration: none;
+                    font-size: 14px;
+                    font-weight: bold;
+                    line-height: 120%;
+                }
+            }
+        }
+        /*===== 11) Social Section  =====*/
+        .social{
+            .col-12{
+                text-align: center;
+                h2{
+                    padding: 35px 10px 10px;
+                    font-size: 30px;
+                    color: $footer-head;
+                }
+                p{
+                    @include prgp;
+                    font-weight: lighter;
+                    font-style: italic;
+                    padding: 2px 40px 15px;
+                }
+                .social-bar{
+                    padding: 9px 9px 31px;
+                    a{
+                        text-decoration: none;
+                        img{
+                            width: 5%;
+                            margin: 0 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        /*===== 12) Footer Section  =====*/
+        .footer{
+            padding: 16px;
+            background-color: $footer-head;
+            p{
+                text-align: center;
+                color:$white
+            }
+        }
+
+        /*===== 05) Container Section End  =====*/
+    }
+}
+
+/*===== 13) Media Query Section =====*/
+@media (max-width:450px){
+    .header{
+        .row{
+            .left{
+                img{
+                    width: 90%;
+                }
+            }
+        }
+    }
+    .shipping{
+        .row{
+            .col-6{
+                width: 100% !important;
+                float: none;
+                padding: 20px 30px !important;
+
+            }
+        }
+    }
+    .social{
+        .col-12{
+            .social-bar{
+                a{
+                    img{
+                        width: 10% !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:380px){
+    .header{
+        .row{
+            .left{
+                img{
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+}
+
